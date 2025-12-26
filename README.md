@@ -1,6 +1,6 @@
 # Basic Node.js App
 
-A simple Node.js web application that serves static HTML pages using Node's built-in `http` module.
+A simple Node.js web application built with **Express.js** that serves static HTML pages and provides a downloadable resume.
 
 ## 🚀 Live Demo
 
@@ -9,20 +9,23 @@ Hosted on Render:
 
 ## 📋 Description
 
-This app serves a few static pages (`/`, `/about`, `/contact-me`) and a fallback 404 page. It uses Tailwind CSS via CDN for styling and does not require a build step.
+This app serves a few static pages (`/`, `/about`, `/contact-me`) and provides a **resume download link** on the `/contact-me` page. Any unknown route will show a **404 page**. Tailwind CSS is used via CDN for styling, and no build step is required.
 
 ## 🛠️ Technology Stack
 
-- Node.js (native `http` and `fs`)
-- HTML (70.7%)
-- JavaScript (29.3%)
+- Node.js  
+- Express.js  
+- HTML (70.7%)  
+- JavaScript (29.3%)  
 - Tailwind CSS via CDN
 
 ## ✨ Routes
 
-- `/` → `index.html`
-- `/about` → `about.html`
-- `/contact-me` → `contact-me.html`
+- `/` → `index.html`  
+- `/about` → `about.html`  
+- `/contact-me` → `contact-me.html`  
+  - Includes a button/link to download **Aryan Parmar’s resume**  
+- `/resume` → Downloads resume PDF from the configured URL in `.env`  
 - Any other path → `404.html`
 
 ## 📦 Installation
@@ -33,9 +36,14 @@ This app serves a few static pages (`/`, `/about`, `/contact-me`) and a fallback
    cd basic-nodejs-app
    ```
 
-2. Install dependencies (optional; used for Tailwind packages in `package.json`):
+2. Install dependencies:
    ```bash
    npm install
+   ```
+
+3. Create a `.env` file and set your resume URL:
+   ```env
+   RESUME_URL=https://www.dropbox.com/s/your_resume_link.pdf?dl=1
    ```
 
 ## ▶️ Running Locally
@@ -45,12 +53,12 @@ Start the server:
 node index.js
 ```
 
-Then open:
+Open in your browser:
 ```
 http://localhost:8080
 ```
 
-Note: The server listens on port `8080` as defined in `index.js`.
+The server listens on port `8080` as defined in `index.js`.
 
 ## 📁 Project Structure
 
